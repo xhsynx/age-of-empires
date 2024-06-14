@@ -1,0 +1,21 @@
+.link {
+  color: rgb(41, 41, 241);
+  text-decoration: underline;
+  padding: 2rem;
+  >span {
+    font-family: fantasy;
+    font-size: 2rem;
+  }
+}
+.link:hover {
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
