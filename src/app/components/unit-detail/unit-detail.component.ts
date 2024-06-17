@@ -14,7 +14,7 @@ export class UnitDetailComponent {
   Object = Object;
   unit: any = {};
   constructor(private location: Location) {
-    const { unit } = this.location.getState() as any || undefined;
-    this.unit = unit as Unit;
+    const state = this.location.getState() as any;
+    this.unit = state?.unit as Unit;
   }
 }
