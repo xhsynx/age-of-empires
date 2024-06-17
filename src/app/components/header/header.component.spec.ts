@@ -23,4 +23,7 @@ describe("HeaderComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+  it("should have header title", () => {
+    expect(component.title).toBeTruthy()
+  });
 });

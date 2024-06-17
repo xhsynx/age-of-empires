@@ -14,7 +14,7 @@ import {
   styleUrl: "./header.component.scss",
 })
 export class HeaderComponent {
-  title: string | undefined = "Home Page";
+  title: string = "Home Page";
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
