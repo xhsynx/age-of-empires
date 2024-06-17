@@ -3,11 +3,12 @@ import {
   TestBed,
   fakeAsync,
   getTestBed,
-  inject,
+  tick,
 } from "@angular/core/testing";
 
 import { HeaderComponent } from "./header.component";
 import { ActivatedRoute, Router } from "@angular/router";
+import { AppComponent } from "../../app.component";
 
 describe("HeaderComponent", () => {
   let component: HeaderComponent;
@@ -30,15 +31,17 @@ describe("HeaderComponent", () => {
     expect(component).toBeTruthy();
   });
   it("should have header title", () => {
-    expect(component.title).toEqual("Home Page")
+    expect(component.title).toEqual("Home Page");
   });
-  it("should be able to navigate to `/`", fakeAsync(() => {
-    const injector = getTestBed();
-    const router = injector.get(Router);
-    const fixture = TestBed.createComponent(HeaderComponent);
-    fixture.detectChanges();
-    router.navigate(["/"]).then(() => {
+  describe("App router", () => {
+    it("should be able to navigate to `/`", fakeAsync(() => {
+      const injector = getTestBed();
+      const router = injector.get(Router);
+      const fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      router.navigate(["/"]);
+      tick();
       expect(router.url).toEqual("/");
-    });
-  }));
+    }));
+  });
 });

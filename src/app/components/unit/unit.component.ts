@@ -13,7 +13,6 @@ import { NavigationExtras, Router } from "@angular/router";
 import { UnitService } from "../../services/unit.service";
 import { Params } from "../../store/models/params";
 
-
 @Component({
   selector: "app-unit",
   standalone: true,
@@ -30,27 +29,23 @@ import { Params } from "../../store/models/params";
 })
 export class UnitComponent {
   Object = Object;
-  readonly woodCheckbox = model(false);
-  readonly foodCheckbox = model(false);
-  readonly goldCheckbox = model(false);
-  readonly woodSliderValue = 0;
-  readonly foodSliderValue = 0;
-  readonly goldSliderValue = 0;
-  readonly all = "all";
-  readonly dark = "dark";
-  readonly feudal = "feudal";
-  readonly castle = "castle";
-  readonly imperial = "imperial";
+  woodCheckbox = model(false);
+  foodCheckbox = model(false);
+  goldCheckbox = model(false);
+  woodSliderValue = 0;
+  foodSliderValue = 0;
+  goldSliderValue = 0;
+  all = "all";
+  dark = "dark";
+  feudal = "feudal";
+  castle = "castle";
+  imperial = "imperial";
   params: Params = {
     age: "all",
   };
   displayedColumns: string[] = ["id", "name", "age", "cost"];
   dataSource: Unit[] = [];
 
-  public allUnits$ = this.store.select(unitSelector).subscribe((res) => {
-    let units = res.units;
-    this.dataSource = units;
-  });
   constructor(
     private store: Store,
     private router: Router,
@@ -58,6 +53,10 @@ export class UnitComponent {
   ) {}
   ngOnInit() {
     this.store.dispatch(loadUnits({ units: this.unitService.fetchAllUnits() }));
+    this.store.select(unitSelector).subscribe((res) => {
+      let units = res.units;
+      this.dataSource = units;
+    });
   }
   navigateUnitDetailPage(row: any) {
     let navigationExtras: NavigationExtras = {

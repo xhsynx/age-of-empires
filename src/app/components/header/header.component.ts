@@ -16,6 +16,9 @@ import {
 export class HeaderComponent {
   title: string = "Home Page";
   constructor(private router: Router) {
+    this.setPageTitle();
+  }
+  setPageTitle() {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         if (this.router.url == "/units") {
