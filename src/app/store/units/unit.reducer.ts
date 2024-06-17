@@ -11,12 +11,10 @@ export enum STATUS {
 
 export interface UnitState {
   units: Unit[];
-  status: STATUS;
 }
 
 export const initialState: UnitState = {
   units: [],
-  status: STATUS.pending,
 };
 
 export const unitReducer = createReducer(
@@ -24,6 +22,5 @@ export const unitReducer = createReducer(
   on(loadUnits, (state, { units }) => ({
     ...state,
     units: units,
-    status: STATUS.success,
   }))
 );

@@ -1,11 +1,15 @@
-export const UNIT_REDUCER = 'UNIT_REDUCER';
+export const UNIT_REDUCER = "[UNIT_REDUCER]";
 export interface Unit {
   id?: number;
   name?: string;
   description?: string;
   expansion?: string;
   age?: string;
-  cost?: object;
+  cost?: {
+    Wood?: number;
+    Food?: number;
+    Gold?: number;
+  };
   build_time?: number;
   reload_time?: number;
   attack_delay?: number;

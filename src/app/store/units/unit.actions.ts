@@ -1,7 +1,7 @@
 import { createAction, props } from "@ngrx/store";
-import { Unit } from "../models/unit";
+import { UNIT_REDUCER, Unit } from "../models/unit";
 
 export const loadUnits = createAction(
-  "[Unit API] Load Units Success",
+  UNIT_REDUCER,
   props<{ units: Unit[] }>()
 );

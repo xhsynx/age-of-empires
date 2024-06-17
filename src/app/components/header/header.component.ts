@@ -1,5 +1,10 @@
 import { Component } from "@angular/core";
-import { RouterLink, RouterLinkActive } from "@angular/router";
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from "@angular/router";
 
 @Component({
   selector: "app-header",
@@ -8,4 +13,19 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
   templateUrl: "./header.component.html",
   styleUrl: "./header.component.scss",
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  title: string | undefined = "Home Page";
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        if (this.router.url == "/units") {
+          this.title = "Units Page";
+        } else if (this.router.url == "/unit-detail") {
+          this.title = "Unit Detail Page";
+        } else {
+          this.title = "Home Page";
+        }
+      }
+    });
+  }
+}
