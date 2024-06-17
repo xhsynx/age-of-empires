@@ -1,4 +1,4 @@
-export const UNIT_REDUCER = "[UNIT_REDUCER]";
+export const UNIT_REDUCER = "UNIT_REDUCER";
 export interface Unit {
   id?: number;
   name?: string;

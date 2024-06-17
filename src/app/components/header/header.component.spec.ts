@@ -1,7 +1,13 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  getTestBed,
+  inject,
+} from "@angular/core/testing";
 
 import { HeaderComponent } from "./header.component";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 describe("HeaderComponent", () => {
   let component: HeaderComponent;
@@ -20,10 +26,19 @@ describe("HeaderComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it("should create HeaderComponent", () => {
     expect(component).toBeTruthy();
   });
   it("should have header title", () => {
-    expect(component.title).toBeTruthy()
+    expect(component.title).toEqual("Home Page")
   });
+  it("should be able to navigate to `/`", fakeAsync(() => {
+    const injector = getTestBed();
+    const router = injector.get(Router);
+    const fixture = TestBed.createComponent(HeaderComponent);
+    fixture.detectChanges();
+    router.navigate(["/"]).then(() => {
+      expect(router.url).toEqual("/");
+    });
+  }));
 });
