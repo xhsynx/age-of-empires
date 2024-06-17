@@ -4,10 +4,11 @@ import {
   isDevMode,
 } from "@angular/core";
 import { provideRouter } from "@angular/router";
-import { provideAnimations} from "@angular/platform-browser/animations"
+
 import { routes } from "./app.routes";
 import { provideState, provideStore } from "@ngrx/store";
 import { provideStoreDevtools } from "@ngrx/store-devtools";
+import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 import { unitReducer } from "./store/units/unit.reducer";
 import { UNIT_REDUCER } from "./store/models/unit";
 import { reduce } from "rxjs";
@@ -19,6 +20,6 @@ export const appConfig: ApplicationConfig = {
     provideStore(reduce),
     provideState({ name: UNIT_REDUCER, reducer: unitReducer }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    provideAnimations(),
+    provideAnimationsAsync(),
   ],
 };

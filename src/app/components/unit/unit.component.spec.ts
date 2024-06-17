@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { UnitComponent } from "./unit.component";
 import { StoreModule } from "@ngrx/store";
 import { BrowserPlatformLocation } from "@angular/common";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 describe("UnitComponent", () => {
   let component: UnitComponent;
@@ -10,8 +11,8 @@ describe("UnitComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UnitComponent, StoreModule.forRoot()],
-      providers:[BrowserPlatformLocation]
+      imports: [UnitComponent, StoreModule.forRoot(),BrowserAnimationsModule],
+      providers:[BrowserPlatformLocation,]
     }).compileComponents();
 
     fixture = TestBed.createComponent(UnitComponent);
