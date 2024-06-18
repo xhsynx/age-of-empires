@@ -6,6 +6,7 @@ import { BrowserPlatformLocation } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Params } from "../../store/models/params";
 import { NavigationExtras } from "@angular/router";
+import { TranslateModule } from "@ngx-translate/core";
 
 describe("UnitComponent", () => {
   let component: UnitComponent;
@@ -13,7 +14,7 @@ describe("UnitComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UnitComponent, StoreModule.forRoot(), BrowserAnimationsModule],
+      imports: [UnitComponent, StoreModule.forRoot(), BrowserAnimationsModule,TranslateModule.forRoot(),],
       providers: [BrowserPlatformLocation],
     }).compileComponents();
 
@@ -22,7 +23,7 @@ describe("UnitComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should create", () => {
+  it("should create UnitComponent", () => {
     expect(component).toBeTruthy();
   });
   it("should have units array", () => {

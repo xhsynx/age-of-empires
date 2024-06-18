@@ -17,7 +17,7 @@ describe('UnitDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create UnitDetailComponent', () => {
     expect(component).toBeTruthy();
   });
 });

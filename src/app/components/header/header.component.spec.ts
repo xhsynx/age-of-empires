@@ -9,6 +9,7 @@ import {
 import { HeaderComponent } from "./header.component";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AppComponent } from "../../app.component";
+import { TranslateModule } from "@ngx-translate/core";
 
 describe("HeaderComponent", () => {
   let component: HeaderComponent;
@@ -18,7 +19,7 @@ describe("HeaderComponent", () => {
   } as ActivatedRoute;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderComponent],
+      imports: [HeaderComponent, TranslateModule.forRoot()],
       providers: [{ provide: ActivatedRoute, useValue: fakeActivatedRoute }],
     }).compileComponents();
 
@@ -43,5 +44,12 @@ describe("HeaderComponent", () => {
       tick();
       expect(router.url).toEqual("/");
     }));
+  });
+  describe("Set page title", () => {
+    it("should set page title", () => {
+      component.setPageTitle();
+      component.title = "Home Page";
+      expect(component.title).toEqual("Home Page");
+    });
   });
 });
