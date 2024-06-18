@@ -1,4 +1,4 @@
-<main style="padding: 2rem">
+<main style="padding: 2rem;border: 1px solid aliceblue;">
   <div>
     <header style="padding-bottom: 1rem">Ages</header>
     <mat-button-toggle-group
@@ -89,12 +89,5 @@
         (click)="navigateUnitDetailPage(row)"
       ></tr>
     </table>
-    <mat-paginator
-      [length]="20"
-      [pageSize]="10"
-      [pageSizeOptions]="[5, 10, 25, 100]"
-      aria-label="Select page"
-    >
-    </mat-paginator>
   </div>
 </main>

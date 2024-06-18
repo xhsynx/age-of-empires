@@ -8,7 +8,6 @@ import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatTableModule } from "@angular/material/table";
 import { Unit } from "../../store/models/unit";
 import { FormsModule } from "@angular/forms";
-import { MatPaginatorModule } from "@angular/material/paginator";
 import { NavigationExtras, Router } from "@angular/router";
 import { UnitService } from "../../services/unit.service";
 import { Params } from "../../store/models/params";
@@ -22,7 +21,6 @@ import { Params } from "../../store/models/params";
     MatButtonToggleModule,
     MatTableModule,
     FormsModule,
-    MatPaginatorModule,
   ],
   templateUrl: "./unit.component.html",
   styleUrl: "./unit.component.scss",

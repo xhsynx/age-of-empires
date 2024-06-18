@@ -1,3 +1,4 @@
+<main>
 <div
 class="main-div"
 >
@@ -5,13 +6,14 @@ class="main-div"
   <div
 class="cell"
   >
-    <p style="padding: 0.25rem">{{ key | uppercase }}:</p>
+    <p class="label">{{ key | uppercase }}:</p>
     @if (key=='cost') { @for (key2 of Object.keys(unit.cost || {}); track
     $index) {
     {{ key2 }}:{{ unit.cost[key2] }}<br />
     } }@else {
-    <p style="padding: 0.25rem">{{ unit[key] }}</p>
+    <p class="label-value">{{ unit[key] }}</p>
     }
   </div>
   }
 </div>
+</main>

@@ -1,17 +1,28 @@
 .cell {
   display: flex;
-  justify-content: center;
-  border-top: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  border-top: 1px solid #7db4e3;
+  border-left: 1px solid #7db4e3;
+  border-right: 1px solid #7db4e3;
 }
 .cell:last-child {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #7db4e3;
 }
 
 .main-div {
   display: flex;
   flex-direction: column;
-  padding-left: 2rem;
-  width: 30%;
+  width: 50%;
+  .label {
+    padding: 0.25rem;
+    font-size: small;
+  }
+  .label-value {
+    padding: 0.25rem;
+    font-size: small;
+  }
+}
+main {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
 }
