@@ -11,6 +11,7 @@ import { FormsModule } from "@angular/forms";
 import { NavigationExtras, Router } from "@angular/router";
 import { UnitService } from "../../services/unit.service";
 import { Params } from "../../store/models/params";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: "app-unit",
@@ -21,6 +22,7 @@ import { Params } from "../../store/models/params";
     MatButtonToggleModule,
     MatTableModule,
     FormsModule,
+    TranslateModule,
   ],
   templateUrl: "./unit.component.html",
   styleUrl: "./unit.component.scss",

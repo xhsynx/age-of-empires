@@ -1,0 +1,25 @@
+{
+  "home": {
+    "title": "Home Page"
+  },
+  "unit": {
+    "title": "Unit Page",
+    "ages":"Ages",
+    "all":"All",
+    "dark":"Dark",
+    "feudal":"Feudal",
+    "castle":"Castle",
+    "imperial":"Imperial",
+    "costs":"Costs",
+    "wood":"Wood",
+    "food":"Food",
+    "gold":"gold",
+    "id":"Id",
+    "name":"Name",
+    "age":"Age",
+    "cost":"Cost"
+  },
+  "unit_detail": {
+    "title": "Unit Detail Page"
+  }
+}
